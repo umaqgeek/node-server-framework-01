@@ -7,7 +7,7 @@ const con = mysql.createConnection({
   user: process.env.USERNAME, // "root", // your db username
   password: process.env.PASSWORD, // "", // your db password
   database: process.env.DATABASE, // "project_node_db" // your db name
-  // acquireTimeout: 1000000,
+  connectTimeout: 1000000,
   debug: true
 });
 
