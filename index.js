@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = require('./models/conndb');
 
 // accept json format from client-side
 app.use(bodyParser.urlencoded({ extended: false }));
