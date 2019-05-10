@@ -8,6 +8,9 @@
 
 `$ npm start`
 
+## Sample Online API URL
+`http://node-server-framework-01-prod.herokuapp.com`
+
 ## API Usage
 
 1. `GET /`
