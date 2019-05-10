@@ -10,6 +10,7 @@
 
 ## Sample Online API URL
 `http://node-server-framework-01-prod.herokuapp.com`
+* This app might be down due to free server. Ask <a href='https://wa.me/60199737579'>umar</a> or <a href='https://www.facebook.com/kidzeclipes'>his facebook</a> to start it up.
 
 ## API Usage
 
