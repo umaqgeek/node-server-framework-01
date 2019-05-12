@@ -23,6 +23,7 @@ function handleReconnect() {
 
   con.on('error', function(err) {
     console.log('db error', err);
+    console.log('error code: ' + err.code);
     if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
       handleReconnect();                         // lost due to either server restart, or a
     } else {                                      // connnection idle timeout (the wait_timeout
