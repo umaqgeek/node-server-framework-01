@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 
-function handleReconnect(con) {
+function handleReconnect() {
   // create connection config
-  const con = mysql.createConnection({
+  let con = mysql.createConnection({
     host: process.env.HOSTNAME || "localhost", // your db host (type full url if from other server)
     port: 3306, // your db port number (default is 3306)
     user: process.env.USERNAME || "root", // your db username
