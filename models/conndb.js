@@ -9,13 +9,16 @@ const con = mysql.createConnection({
   database: process.env.DATABASE || "project_node_db", // your db name
 });
 
-// establish connection database
-con.connect(function(err) {
-  if (err) {
-    console.log(err);
-    throw err;
-  }
-  console.log("Connected ..");
-});
+function handleReconnect(con) {
+  // establish connection database
+  return con.connect(function(err) {
+    if (err) {
+      console.log(err);
+      setTimeout(handleReconnect(con), 2000);
+    }
+    console.log("Connected ..");
+  });
+};
+handleReconnect(con);
 
 module.exports = con;
