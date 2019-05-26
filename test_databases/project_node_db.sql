@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 09, 2019 at 01:45 PM
+-- Generation Time: May 27, 2019 at 12:40 AM
 -- Server version: 5.7.26-0ubuntu0.18.10.1
 -- PHP Version: 7.2.17-0ubuntu0.18.10.1
 
@@ -38,7 +38,23 @@ CREATE TABLE `drugs` (
 --
 
 INSERT INTO `drugs` (`id`, `name`, `category`, `status`) VALUES
-(1, 'Paracetamol 1', 'vitamin', 1);
+(10, 'Luggage 20kg', 'vitamin', 0),
+(11, 'paracetamol', 'medicine', 1),
+(12, 'qweqwe', 'others', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `queues`
+--
+
+CREATE TABLE `queues` (
+  `id` int(11) NOT NULL,
+  `patientId` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `number` int(11) NOT NULL DEFAULT '1',
+  `status` enum('pending','consult','done','reject') NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -51,6 +67,12 @@ ALTER TABLE `drugs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `queues`
+--
+ALTER TABLE `queues`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -58,7 +80,12 @@ ALTER TABLE `drugs`
 -- AUTO_INCREMENT for table `drugs`
 --
 ALTER TABLE `drugs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `queues`
+--
+ALTER TABLE `queues`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
