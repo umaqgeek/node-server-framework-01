@@ -10,4 +10,7 @@ module.exports = (app) => {
   app.delete('/drug/:id', drugController.remove); // remove one drug.
   app.put('/drug/:id', drugController.edit); // update one drug.
 
+  var queueController = require('../controllers/queue_controller');
+  app.get('/queue/:id', queueController.get);
+
 };
