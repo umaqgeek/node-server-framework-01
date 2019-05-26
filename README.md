@@ -104,3 +104,19 @@ return (Object)
     "message": "Drug successfully deleted" (String)
 }
 ```
+
+7. `GET /queue/{id}`
+```
+return (Array)
+[
+    (Object)
+    {
+        "id": 1, (Integer)
+        "name": "Umar Mukhtar", (String)
+        "number": 1, (Integer)
+        "status": "pending|consult|done|reject" (String)
+    },
+    ...
+]
+
+```
